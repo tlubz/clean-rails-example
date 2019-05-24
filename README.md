@@ -1,24 +1,11 @@
-# README
+# Clean Rails Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A dockerized example of using clean architecture in rails
 
-Things you may want to cover:
+# Setup
 
-* Ruby version
+run `docker-compose up app` to launch the app on localhost:3000
 
-* System dependencies
+# Testing
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+run `rspec` to run the test suite
