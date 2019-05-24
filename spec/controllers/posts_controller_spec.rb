@@ -6,7 +6,7 @@ require './lib/blog_app/use_cases/add_post'
 RSpec.describe PostsController do
   describe 'POST create' do
     subject(:call) do
-      post :create, params: params
+      post :create, params: { post: params }
     end
 
     let(:params) do
