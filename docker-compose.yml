@@ -2,5 +2,12 @@ version: '3'
 services:
   app:
     build: .
+    command:
+     - rails
+     - server
+     - -b
+     - 0.0.0.0
+    ports:
+      - 3000:3000
     volumes:
       - .:/src
