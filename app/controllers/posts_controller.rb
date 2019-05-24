@@ -1,4 +1,4 @@
-require 'lib/blog_app/use_cases/add_post'
+require './lib/blog_app/use_cases/add_post'
 
 class PostsController < ApplicationController
   # POST /posts

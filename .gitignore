@@ -32,3 +32,6 @@
 
 # jetbrains
 .idea
+
+# rspec example persistence
+spec/examples.txt
