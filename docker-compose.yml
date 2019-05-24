@@ -11,3 +11,7 @@ services:
       - 3000:3000
     volumes:
       - .:/src
+      - gems:/usr/local/bundle:cached
+
+volumes:
+  gems:
