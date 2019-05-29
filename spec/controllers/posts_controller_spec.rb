@@ -13,7 +13,7 @@ RSpec.describe PostsController do
       {
         author: 'fred fake',
         title: 'fake title',
-        body: 'here is a fake message body.'
+        body: 'here is a fake message body.',
       }
     end
 
@@ -34,7 +34,7 @@ RSpec.describe PostsController do
     it 'serializes and renders the response' do
       call
 
-      expected = params
+      expected = params.merge(created_at: nil, updated_at: nil)
       expect(Oj.load(response.body, symbol_keys: true)).to eq(expected)
     end
   end
