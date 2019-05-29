@@ -27,4 +27,22 @@ RSpec.describe BlogApp::Entities::Post do
         )
     end
   end
+
+  describe '#==' do
+    it 'evaluates equality' do
+      equality =
+        described_class.new(author: 'a', title: 'b', body: 'c') ==
+          described_class.new(author: 'a', title: 'b', body: 'c')
+
+      expect(equality).to eq(true)
+    end
+
+    it 'evaluates inequality' do
+      equality =
+        described_class.new(author: 'a', title: 'b', body: 'c') ==
+          described_class.new(author: 'd', title: 'e', body: 'f')
+
+      expect(equality).to eq(false)
+    end
+  end
 end

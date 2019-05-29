@@ -6,7 +6,7 @@ require './lib/blog_app/use_cases/add_post'
 RSpec.describe PostsController do
   describe 'POST create' do
     subject(:call) do
-      post :create, params: { post: params }
+      post :create, params: params
     end
 
     let(:params) do
@@ -26,9 +26,9 @@ RSpec.describe PostsController do
       allow(BlogApp::UseCases::AddPost).to receive(:new).and_return(use_case)
     end
 
-    it 'executes the add-post use-case' do
+    it 'executes the add-post use-case with the post' do
       call
-      expect(use_case).to have_received(:execute).with(kind_of(BlogApp::Entities::Post))
+      expect(use_case).to have_received(:execute).with(BlogApp::Entities::Post.new(params))
     end
 
     it 'serializes and renders the response' do
