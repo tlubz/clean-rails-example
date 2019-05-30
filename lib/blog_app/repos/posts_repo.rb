@@ -5,4 +5,5 @@ class BlogApp::Repos::PostsRepo
   def find(id); end
   def update(id, post); end
   def destroy(id); end
+  def list; end
 end

@@ -1,10 +1,8 @@
 require_relative '../entities'
-require 'ostruct'
-
-
 
 class BlogApp::Entities::Post
   ATTRIBUTES = %i[
+    id
     author
     title
     body
@@ -27,7 +25,8 @@ class BlogApp::Entities::Post
   end
 
   def ==(other)
-    other.class == self.class && ATTRIBUTES.all? do |attr|
+    return false unless other.class == self.class
+    ATTRIBUTES.all? do |attr|
       self.send(attr) == other.send(attr)
     end
   end

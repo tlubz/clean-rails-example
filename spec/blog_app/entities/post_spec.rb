@@ -23,7 +23,8 @@ RSpec.describe BlogApp::Entities::Post do
           title: 'fake-title',
           body: 'fake body text',
           created_at: nil,
-          updated_at: nil
+          updated_at: nil,
+          id: nil
         )
     end
   end
